@@ -1,0 +1,94 @@
+<h1 class="maintitle">Burgers</h1>
+
+
+<div class="card is-centered has-background-success">
+  <div class="container is-fluid">
+  <header class="card-header">
+    <p class="card-header-title is-centered">
+      Burgers that we didnt Eat!!
+    </p>
+    <ul>
+      {{#each burgerList}} {{#unless devoured}} {{>burgers/burger-block devoured=true}}
+      <br> {{/unless}} {{/each}}
+    </ul>
+</div>
+</div>
+
+<div class="card has-background-warning">
+   <div class="container is-fluid">
+  <header class="card-header">
+    <p class="card-header-title is-centered">
+      Burgers We Devoured!!
+    </p>
+    <ul>
+      {{#each burgerList}} {{#if devoured}} {{>burgers/burger-block devoured=false}}
+      <br> {{/if}} {{/each}}
+
+    </ul>
+</div>
+</div>
+<br>
+<br>
+
+
+
+<h2>Add a Burger</h2>
+<form class="create-form">
+  <div class="container is-fluid">
+    <div class="form-group">
+      <div class="control">
+        <label for="burger">Burger Name:</label>
+        <input type="text" id="burger" name="name" class="input is-warning is-normal" placeholder="Add a burger here!">
+      </div>
+    </div>
+  </div>
+  <br> {{!--
+  <div class="form-group">
+    <label for="burger">Burger Name:</label>
+    <input type="text" id="burger" name="name">
+  </div> --}}
+
+  <button type="submit" class="button is-warning">Add Burger</button>
+</form>
+
+<h2>Delete a Burger</h2>
+<form class="deleteBurger">
+  <div class="container is-fluid">
+    <div class="form-group">
+      <div class="control">
+        <div class="Deleteform">
+          <label for="burger">Burger Name:</label>
+          {{!--
+          <select name="burger">
+            {{#each burger}}
+            <option value='{{burgerID}}'>{{burger.name}}</option>
+            {{/each}}
+          </select> --}}
+          <input type="text" id="burger" name="name" class="input is-warning is-normal" placeholder="Delete a Burger here!">
+        </div>
+      </div>
+    </div>
+    </div>
+    <br>
+
+    <button class="deleteBurger button is-warning" data-id="{{this.id}}">DELETE!</button>
+
+</form>
+<br>
+<br>
+<br>
+<br>
+
+
+
+
+<footer class="footer">
+  <div class="content has-text-centered">
+    <p>
+      <strong>Burgers</strong> by
+      <a href="https://jgthms.com">Trenton</a>. The source code is licensed
+      <a href="http://opensource.org/licenses/mit-license.php">MIT</a>. The website content is licensed
+      <a href="http://creativecommons.org/licenses/by-nc-sa/4.0/">CC BY NC SA 4.0</a>.
+    </p>
+  </div>
+</footer>
